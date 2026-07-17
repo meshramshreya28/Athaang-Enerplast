@@ -43,9 +43,9 @@ const About = () => {
             {/* Main Premium Image */}
             <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[300px] sm:h-[400px] lg:h-[500px]">
               <div className="absolute inset-0 bg-primary/10 z-10"></div>
-              <img 
-                src="/about_corporate.png" 
-                alt="Corporate Meeting at Athaang Enerplast" 
+              <img
+                src="/about.png"
+                alt="Corporate Meeting at Athaang Enerplast"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -97,7 +97,7 @@ const About = () => {
             </div>
 
             {/* CTA Button */}
-            <Link to="/about" className="bg-brand-green text-white md:bg-transparent md:border-2 md:border-brand-green md:text-brand-green px-8 py-3 rounded-xl font-semibold text-base inline-flex items-center md:hover:bg-brand-green md:hover:text-white transition-colors group w-fit">
+            <Link to="/about" className="bg-primary text-white md:bg-transparent md:border-2 md:border-primary md:text-primary px-8 py-3 rounded-xl font-semibold text-base inline-flex items-center md:hover:bg-primary md:hover:text-white transition-colors group w-fit">
               Learn More
               <ArrowRight className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
             </Link>

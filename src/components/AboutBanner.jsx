@@ -3,35 +3,44 @@ import { motion } from 'framer-motion';
 
 const AboutBanner = () => {
   return (
-    <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-primary">
-      {/* Abstract White Architecture / Polymer Background */}
+    <div className="relative pt-36 pb-24 overflow-hidden bg-primary">
+      {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src="/hero_bg.png"
-          alt="Abstract Polymer Architecture"
-          className="w-full h-full object-cover opacity-20 mix-blend-overlay"
+          alt="Warehouse with film rolls"
+          className="w-full h-full object-cover object-center mix-blend-overlay opacity-60"
         />
-        {/* Soft Light & Glassmorphism Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary"></div>
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-green/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-green/5 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/4"></div>
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(90deg, rgba(16,42,67,0.95) 0%, rgba(16,42,67,0.75) 45%, rgba(16,42,67,0.3) 100%)"
+          }}
+        ></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 text-left">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl mx-auto"
+          className="max-w-2xl"
         >
-          <span className="inline-block py-1 px-3 rounded-full bg-brand-green/10 text-brand-green text-sm font-bold tracking-widest uppercase mb-6 border border-brand-green/20 backdrop-blur-md">
-            About Us
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
-            Supplying Expertise.<br />Building Trust.
+          <div className="text-white/80 text-sm font-medium mb-6 tracking-wide">
+            Home &gt; About Us
+          </div>
+          
+          <h1 className="text-4xl md:text-5xl lg:text-[56px] font-heading font-bold text-white leading-tight mb-4 tracking-tight">
+            ABOUT <br />
+            ATHAANG ENERPLAST
           </h1>
-          <p className="text-lg md:text-xl text-paragraph leading-relaxed">
-            Trusted supplier of specialty films, polymer materials & industrial packaging solutions backed by 28+ years of technical expertise.
+          
+          <h2 className="text-xl md:text-2xl font-bold text-brand-green mb-6">
+            Trusted Supply Partner. Consistent Quality. Lasting Partnerships.
+          </h2>
+          
+          <p className="text-[#F1F5F9] font-medium text-[16px] leading-[1.7] opacity-90">
+            Athaang Enerplast is a trusted supplier of specialty films, polymer materials, and packaging solutions. Backed by over 28 years of technical expertise and a strong supplier network, we help businesses source the right materials with consistent quality and dependable service.
           </p>
         </motion.div>
       </div>

@@ -1,77 +1,72 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Leaf, TrendingUp, Globe, Award } from 'lucide-react';
-
-const milestones = [
-  {
-    year: "Foundation",
-    title: "The Beginning",
-    description: "Started our journey with a vision to redefine quality in packaging.",
-    icon: Leaf
-  },
-  {
-    year: "Growth",
-    title: "Scaling Operations",
-    description: "Expanded our manufacturing capabilities and formed key partnerships.",
-    icon: TrendingUp
-  },
-  {
-    year: "Expansion",
-    title: "Global Reach",
-    description: "Reached international markets and broadened our product portfolio.",
-    icon: Globe
-  },
-  {
-    year: "Today",
-    title: "Industry Leaders",
-    description: "Recognized as a trusted supply partner across diverse industries.",
-    icon: Award
-  }
-];
+import { Building2, Handshake, TrendingUp, Award } from 'lucide-react';
 
 const OurJourney = () => {
+  const steps = [
+    {
+      year: "1996",
+      title: "1996",
+      desc: "Started as a technical trading business",
+      icon: Building2
+    },
+    {
+      year: "Expanded",
+      title: "Expanded",
+      desc: "Expanded supplier network",
+      icon: Handshake
+    },
+    {
+      year: "Growth",
+      title: "Growth",
+      desc: "Added specialty films and packaging solutions",
+      icon: TrendingUp
+    },
+    {
+      year: "Today",
+      title: "Today",
+      desc: "Serving industries across India with trust and commitment",
+      icon: Award
+    }
+  ];
+
   return (
-    <section className="py-20 md:py-28 bg-slate-50 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+    <section className="py-20 bg-white overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-6">
         
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-bold text-brand-green uppercase tracking-widest mb-3">Our Journey</h2>
-          <h3 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6">
-            A Legacy of Excellence
-          </h3>
-          <div className="h-[3px] w-24 bg-gradient-to-r from-brand-green to-transparent mx-auto rounded-full"></div>
-        </div>
+        <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary text-center uppercase tracking-wide mb-20">
+          OUR JOURNEY
+        </h2>
 
-        <div className="relative">
-          {/* Connecting Line */}
-          <div className="absolute top-1/2 left-0 w-full h-1 bg-gray-200 -translate-y-1/2 hidden lg:block z-0"></div>
+        <div className="relative max-w-4xl mx-auto">
+          {/* Horizontal Line connecting nodes */}
+          <div className="absolute top-[40px] left-0 w-full h-[3px] bg-brand-green/30 md:bg-brand-green hidden md:block"></div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative z-10">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="relative group"
-              >
-                {/* Icon Circle */}
-                <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-lg border-4 border-brand-green/20 group-hover:border-brand-green transition-all duration-300 mb-6 relative z-10">
-                  <milestone.icon className="w-8 h-8 text-brand-green" />
-                </div>
-                
-                {/* Content */}
-                <div className="text-center bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 h-full">
-                  <span className="text-brand-green font-bold text-lg mb-2 block">{milestone.year}</span>
-                  <h4 className="text-xl font-heading font-bold text-slate-900 mb-3">{milestone.title}</h4>
-                  <p className="text-slate-600 text-sm leading-relaxed">{milestone.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+          {/* Mobile vertical line */}
+          <div className="absolute left-[39px] top-0 bottom-0 w-[3px] bg-brand-green md:hidden"></div>
 
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-4 relative z-10">
+            {steps.map((step, idx) => {
+              const Icon = step.icon;
+              return (
+                <div key={idx} className="flex flex-row md:flex-col items-center md:items-center text-left md:text-center gap-6 md:gap-4">
+                  {/* Icon Circle */}
+                  <div className="w-[80px] h-[80px] rounded-full bg-primary flex items-center justify-center flex-shrink-0 border-4 border-white shadow-[0_0_0_2px_rgba(76,175,80,0.3)] md:shadow-none relative z-10">
+                    <Icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                  </div>
+                  
+                  {/* Content */}
+                  <div>
+                    <h3 className="text-xl font-bold text-primary mb-2">{step.title}</h3>
+                    <p className="text-slate-600 text-sm max-w-[180px] mx-auto leading-relaxed">
+                      {step.desc}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
       </div>
     </section>
   );

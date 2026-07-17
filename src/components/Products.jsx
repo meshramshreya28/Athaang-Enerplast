@@ -113,7 +113,7 @@ const Products = () => {
           <h4 className="text-2xl md:text-3xl font-heading text-slate-900 mb-6">
             Can't find the product you're <span className="text-brand-green">looking for?</span>
           </h4>
-          <Link to="/products" className="bg-brand-green text-white md:bg-transparent md:border-2 md:border-brand-green md:text-brand-green px-8 py-3 rounded-xl font-semibold text-base inline-flex items-center md:hover:bg-brand-green md:hover:text-white transition-colors group">
+          <Link to="/products" className="bg-primary text-white md:bg-transparent md:border-2 md:border-primary md:text-primary px-8 py-3 rounded-xl font-semibold text-base inline-flex items-center md:hover:bg-primary md:hover:text-white transition-colors group">
             View All Products
             <ArrowRight className="ml-3 w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
           </Link>

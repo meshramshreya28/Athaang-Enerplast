@@ -1,24 +1,30 @@
 import React from 'react';
 import AboutBanner from '../components/AboutBanner';
-import About from '../components/About';
+import WhoWeAre from '../components/WhoWeAre';
+import AtAGlance from '../components/AtAGlance';
 import OurJourney from '../components/OurJourney';
-import MissionVision from '../components/MissionVision';
-import WhyChooseUs from '../components/WhyChooseUs';
-import SupplyNetwork from '../components/SupplyNetwork';
-import Quality from '../components/Quality';
-import CTA from '../components/CTA';
+import WhatWeSupply from '../components/WhatWeSupply';
+import IndustriesAndWhyChooseUs from '../components/IndustriesAndWhyChooseUs';
+import OurSupplyProcess from '../components/OurSupplyProcess';
+import VisionMission from '../components/VisionMission';
+import OurCoreValues from '../components/OurCoreValues';
+import AboutCTA from '../components/AboutCTA';
 
 const AboutUs = () => {
   return (
-    <div className="bg-white min-h-screen">
-      <AboutBanner />
-      <About />
-      <OurJourney />
-      <MissionVision />
-      <WhyChooseUs />
-      <SupplyNetwork />
-      <Quality />
-      <CTA />
+    <div className="min-h-screen bg-slate-50 font-body">
+      <main>
+        <AboutBanner />
+        <WhoWeAre />
+        <AtAGlance />
+        <OurJourney />
+        <WhatWeSupply />
+        <IndustriesAndWhyChooseUs />
+        <OurSupplyProcess />
+        <VisionMission />
+        <OurCoreValues />
+        <AboutCTA />
+      </main>
     </div>
   );
 };

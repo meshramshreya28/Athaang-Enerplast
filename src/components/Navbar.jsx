@@ -8,6 +8,10 @@ const Navbar = () => {
 
   const location = useLocation();
 
+  const isDarkHeaderPage = ['/', '/about'].includes(location.pathname);
+  const shouldHaveWhiteBg = isScrolled || !isDarkHeaderPage;
+  const shouldBeDarkText = isScrolled || !isDarkHeaderPage;
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -31,7 +35,7 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-sm py-2' : 'bg-transparent py-2'
+        shouldHaveWhiteBg ? 'bg-white/95 backdrop-blur-lg shadow-sm py-2' : 'bg-transparent py-2'
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-8 flex items-center justify-between">
@@ -43,7 +47,7 @@ const Navbar = () => {
               className="h-full w-full object-contain object-center mix-blend-multiply"
             />
           </div>
-          <span className={`text-lg md:text-2xl font-heading font-semibold tracking-tight ${isScrolled ? 'text-slate-900' : 'text-white'}`}>
+          <span className={`text-lg md:text-2xl font-heading font-semibold tracking-tight ${shouldBeDarkText ? 'text-slate-900' : 'text-white'}`}>
             ATHAANG <span className="text-brand-green">ENERPLAST</span>
           </span>
         </Link>
@@ -56,11 +60,11 @@ const Navbar = () => {
                 <Link
                   to={link.path}
                   className={`relative text-[13px] font-bold uppercase tracking-[0.05em] transition-colors ${
-                    isScrolled ? 'hover:text-brand-green' : 'hover:text-white'
+                    shouldBeDarkText ? 'hover:text-brand-green' : 'hover:text-white'
                   } ${
                     location.pathname === link.path
-                      ? (isScrolled ? 'text-brand-green' : 'text-white')
-                      : (isScrolled ? 'text-slate-700' : 'text-white/80')
+                      ? (shouldBeDarkText ? 'text-brand-green' : 'text-white')
+                      : (shouldBeDarkText ? 'text-slate-700' : 'text-[rgba(255,255,255,0.88)]')
                   }`}
                 >
                   {link.name}
@@ -71,7 +75,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <Link to="/contact" className="px-6 py-2.5 rounded-xl text-sm font-semibold transition-all hover:scale-105 bg-brand-green text-white hover:bg-hover shadow-lg">
+          <Link to="/contact" className="px-6 py-2.5 rounded-xl text-sm font-semibold transition-all hover:scale-105 bg-primary text-white hover:bg-primary-hover shadow-lg">
             Get a Quote
           </Link>
         </div>
@@ -82,9 +86,9 @@ const Navbar = () => {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? (
-            <X className={`w-8 h-8 ${isScrolled ? 'text-slate-900' : 'text-white'}`} />
+            <X className={`w-8 h-8 ${shouldBeDarkText ? 'text-slate-900' : 'text-white'}`} />
           ) : (
-            <Menu className={`w-8 h-8 ${isScrolled ? 'text-slate-900' : 'text-white'}`} />
+            <Menu className={`w-8 h-8 ${shouldBeDarkText ? 'text-slate-900' : 'text-white'}`} />
           )}
         </button>
       </div>
@@ -111,7 +115,7 @@ const Navbar = () => {
               )}
             </Link>
           ))}
-          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="bg-brand-green text-white px-6 py-3 rounded-xl font-semibold w-full text-center">
+          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="bg-primary text-white px-6 py-3 rounded-xl font-semibold w-full text-center hover:bg-primary-hover transition-colors">
             Get a Quote
           </Link>
         </motion.div>

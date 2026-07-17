@@ -152,7 +152,7 @@ const Industries = () => {
           transition={{ duration: 0.5 }}
           className="mt-16 flex justify-center"
         >
-          <Link to="/industries" className="bg-brand-green text-white md:bg-transparent md:border-2 md:border-brand-green md:text-brand-green px-8 py-3 rounded-xl font-semibold text-base inline-flex items-center md:hover:bg-brand-green md:hover:text-white transition-colors group">
+          <Link to="/industries" className="bg-primary text-white md:bg-transparent md:border-2 md:border-primary md:text-primary px-8 py-3 rounded-xl font-semibold text-base inline-flex items-center md:hover:bg-primary md:hover:text-white transition-colors group">
             Explore All Industries
             <ArrowRight className="ml-3 w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
           </Link>
