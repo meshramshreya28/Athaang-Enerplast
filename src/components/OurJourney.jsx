@@ -5,7 +5,7 @@ const OurJourney = () => {
   const steps = [
     {
       year: "1996",
-      title: "1996",
+      title: "Founded",
       desc: "Started as a technical trading business",
       icon: Building2
     },
@@ -16,8 +16,8 @@ const OurJourney = () => {
       icon: Handshake
     },
     {
-      year: "Growth",
-      title: "Growth",
+      year: "Diversified",
+      title: "Diversified",
       desc: "Added specialty films and packaging solutions",
       icon: TrendingUp
     },
@@ -30,8 +30,8 @@ const OurJourney = () => {
   ];
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="pt-12 pb-12 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
         
         <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary text-center uppercase tracking-wide mb-20">
           OUR JOURNEY

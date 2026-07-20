@@ -27,7 +27,7 @@ const OurCoreValues = () => {
 
   return (
     <section className="pb-24 bg-white">
-      <div className="max-w-[1200px] mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         
         <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary text-center uppercase tracking-wide mb-12">
           OUR CORE VALUES
@@ -37,7 +37,7 @@ const OurCoreValues = () => {
           {values.map((val, idx) => {
             const Icon = val.icon;
             return (
-              <div key={idx} className="bg-white border border-gray-100 shadow-sm rounded-lg p-6 flex flex-col md:flex-row gap-4 items-start hover:shadow-md transition-shadow">
+              <div key={idx} className="bg-white border border-gray-100 shadow-sm rounded-lg p-6 flex flex-col md:flex-row gap-4 items-start hover:shadow-xl hover:border-brand-green hover:-translate-y-1 transition-all duration-300">
                 <div className="w-12 h-12 rounded bg-brand-green/10 flex items-center justify-center flex-shrink-0">
                   <Icon className="w-6 h-6 text-brand-green" strokeWidth={1.5} />
                 </div>

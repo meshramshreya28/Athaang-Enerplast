@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="bg-[#071826] text-white pt-12 pb-4 border-t border-white/5 font-body">
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-8">
+      <div className="max-w-7xl mx-auto px-6">
         
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[3.5fr_1fr_1fr_1fr_1.5fr] gap-8 lg:gap-4 mb-10">
@@ -106,8 +106,12 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-[#16A34A] shrink-0 mt-0.5" />
-                <div className="flex flex-col gap-0.5">
+                <div className="flex flex-col gap-1.5 mt-0.5">
+                  <p className="text-white font-medium text-[13px]">Mr. Ashutosh Khobragade</p>
                   <a href="tel:+919145288176" className="text-[#B8C2CC] hover:text-white transition-colors text-[13px]">+91 91452 88176</a>
+                  <p className="text-white font-medium text-[13px] mt-2">Mr. Atul Jadhav</p>
+                  <a href="tel:+919356448807" className="text-[#B8C2CC] hover:text-white transition-colors text-[13px]">+91 93564 48807</a>
+                  <a href="tel:+919513301888" className="text-[#B8C2CC] hover:text-white transition-colors text-[13px]">+91 95133 01888</a>
                 </div>
               </li>
               <li className="flex items-start gap-3">

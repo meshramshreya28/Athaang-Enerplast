@@ -46,7 +46,7 @@ const WhyChooseUs = () => {
 
   return (
     <section className="py-16 md:py-20 bg-[#071826]">
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           
           {/* Left Column (40%) */}

@@ -87,7 +87,7 @@ const industries = [
 const Industries = () => {
   return (
     <section id="industries" className="pt-8 md:pt-12 pb-16 md:pb-20 bg-white">
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-6">
         
         {/* Header section */}
         <div className="text-center mb-16 flex flex-col items-center">

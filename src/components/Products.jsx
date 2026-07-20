@@ -6,32 +6,32 @@ import { Link } from 'react-router-dom';
 const products = [
   {
     title: "Specialty Films",
-    desc: "Includes: Lamination Films • Easy Peel Films • Anti-Fog Films • Laser Cut Films",
+    desc: "Includes: Lamination Films • Easy Peel Films • Anti-Fog Films • Laser Cut Films • Acid Co-Polymer Films",
     image: "/product_1.png"
   },
   {
-    title: "Flexible Packaging Films",
-    desc: "Includes: BOPP • PET • CPP • PE Films",
+    title: "Packaging Films",
+    desc: "Includes: Milk & Oil Packing • Shrink Films • Stretch Films • POF Shrink • BOPP/PET Films",
     image: "/product_2.png"
   },
   {
     title: "Pharmaceutical Packaging",
-    desc: "Includes: Blister Films • Pharma Films • API Liners",
+    desc: "Includes: Pharma Grade Films (Foil Lamination) • API Packing Liners • Blister Films",
     image: "/product_3.png"
   },
   {
     title: "Agricultural Solutions",
-    desc: "Includes: Mulch Films • Greenhouse Films • Shade Nets",
+    desc: "Includes: Mulching Films • Polyhouse/Green House Films • Shade Nets • Geomembrane Sheets",
     image: "/product_4.png"
   },
   {
-    title: "Industrial Packaging",
-    desc: "Includes: Stretch Films • Shrink Films • Surface Protection • Courier Bags • Security Bags • FIBC Liners",
+    title: "Industrial & Security Bags",
+    desc: "Includes: FIBC Liners & Jumbo Bags • Courier & Security Bags • Surface Protection Films",
     image: "/product_5.png"
   },
   {
     title: "Polymer Materials",
-    desc: "Includes: Polymer Granules • Masterbatches • Fillers • Additives",
+    desc: "Includes: Masterbatches • Fillers & Additives • Polymer Granules • Reprocess Materials",
     image: "/product_6.png"
   }
 ];
@@ -58,66 +58,76 @@ const Products = () => {
               <div className="h-[2px] w-16 bg-gradient-to-l from-transparent to-[#16A34A] rounded-full"></div>
             </div>
           </div>
-          <p className="text-slate-600 font-body text-base sm:text-lg max-w-2xl mx-auto px-4 sm:px-0">
-            Explore our comprehensive range of specialty films, polymer materials, and packaging solutions designed to meet diverse industrial requirements.
+          
+          <p className="max-w-2xl mx-auto text-slate-600 text-[15px] sm:text-base leading-relaxed">
+            We offer a comprehensive range of high-performance polymer materials, from agricultural and pharmaceutical films to industrial packaging and masterbatches.
           </p>
         </div>
 
-        {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        {/* Products Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {products.map((product, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white rounded-[24px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.08)] hover:shadow-2xl hover:-translate-y-2 border-2 border-transparent hover:border-brand-green transition-all duration-300 flex flex-col h-full"
+              className="group relative bg-white rounded-2xl overflow-hidden shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-2xl transition-all duration-500 flex flex-col"
             >
-              {/* Image Container */}
-              <div className="h-[200px] sm:h-[240px] md:h-[280px] overflow-hidden relative bg-slate-100 flex items-center justify-center">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
+              {/* Image Container with precise aspect ratio */}
+              <div className="relative w-full h-[240px] overflow-hidden bg-slate-100">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/0 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Fallback pattern for when image is missing */}
+                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#16A34A_1px,transparent_1px)] [background-size:16px_16px]"></div>
+                
+                <img 
+                  src={product.image} 
+                  alt={product.title} 
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.parentElement.classList.add('bg-slate-200');
+                  }}
                 />
               </div>
 
               {/* Content Container */}
-              <div className="flex-1 p-6 flex flex-col bg-white z-10 border-t border-slate-50">
-                <div>
-                  <h4 className="text-xl font-bold font-heading text-slate-900 mb-2">
-                    {product.title}
-                  </h4>
-                  <p className="text-slate-500 text-sm">
-                    {product.desc}
-                  </p>
+              <div className="p-6 md:p-8 flex flex-col flex-grow bg-white z-20">
+                <h4 className="text-xl font-heading font-bold text-primary mb-3 group-hover:text-brand-green transition-colors duration-300">
+                  {product.title}
+                </h4>
+                
+                <p className="text-slate-600 text-sm leading-relaxed mb-8 flex-grow">
+                  {product.desc}
+                </p>
+
+                <div className="mt-auto flex items-center justify-between">
+                  <Link 
+                    to="/products" 
+                    className="inline-flex items-center gap-2 text-[13px] font-bold text-slate-800 uppercase tracking-wider group-hover:text-brand-green transition-colors"
+                  >
+                    View details
+                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-brand-green/10 transition-colors">
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-brand-green transition-colors"></div>
+                  </div>
                 </div>
-                <button className="mt-auto pt-6 text-brand-green font-semibold flex items-center text-sm group-hover:text-green-700 transition-colors w-fit">
-                  Explore
-                  <ArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </button>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
-        >
-          <h4 className="text-2xl md:text-3xl font-heading text-slate-900 mb-6">
-            Can't find the product you're <span className="text-brand-green">looking for?</span>
-          </h4>
-          <Link to="/products" className="bg-primary text-white md:bg-transparent md:border-2 md:border-primary md:text-primary px-8 py-3 rounded-xl font-semibold text-base inline-flex items-center md:hover:bg-primary md:hover:text-white transition-colors group">
-            View All Products
-            <ArrowRight className="ml-3 w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
+        <div className="mt-16 text-center">
+          <Link to="/products">
+            <button className="bg-primary hover:bg-primary-hover text-white px-8 py-3.5 rounded-xl font-semibold text-[15px] transition-all hover:scale-105 shadow-md hover:shadow-xl flex items-center gap-2 mx-auto">
+              Explore All Categories
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </Link>
-        </motion.div>
+        </div>
 
       </div>
     </section>
